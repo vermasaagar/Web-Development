@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="traversing.js" defer></script>
+</head>
+<body>
+
+   <div class="title"><p class="text">Welcome to great stack 1</p>
+    <p class="text">Welcome to great stack 2</p>
+    <p class="second">Welcome to great stack 3</p>
+    <p class="text">Welcome to great stack 4</p>
+   
+   </div>
+
+
+   <script>
+    // let text = document.querySelector(".text");
+    // console.log(text.parentNode);
+
+    let parent = document.querySelector(".title");
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+    console.log(parent.childNodes);
+
+
+
+    let second = document.querySelector(".second");
+    console.log(second.previousElementSibling);
+    console.log(second.nextElementSibling);
+
+   </script>
+    
+</body>
+</html>

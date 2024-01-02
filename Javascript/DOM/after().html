@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After method</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>home</li>
+        <li>menu</li>
+        <li>option</li>
+        <li>blog</li>
+
+        <input type="text" id="username" placeholder="username">
+    </ul>
+
+
+    <script>
+        let menu = document.getElementById("menu");
+        // menu.after(node1, node2, node3);
+
+
+        // parentNode.append(newNode);//accept multiple node it can accept string also
+
+
+        // parentNode.prepend(newNodes);//add nodes as first child in the parent nodes
+
+        
+        
+        
+        // menu.insertAdjacentHTML(positionName, text);
+        // before begin
+        // after begin
+        // before end 
+        // after end
+        menu.insertAdjacentHTML("beforeend", "<li>contact</li>");
+
+
+ 
+       // cloneNode(): another copy of existing node
+        let newnode = menu.cloneNode(true);
+        console.log(newnode);
+
+
+
+        //removeChild() : to remove the child element of a node 
+        menu.removeChild(menu.lastElementChild);
+
+
+        //insertbefore() : to insert a new node before an existing node as a child node of a parent node.
+        //parentNode.insertBefore(newNode, existingNode);
+        // menu.insertBefore(newNode, menu.firstElementChild);
+
+
+        //attribute() :
+        let inputbox = document.getElementById("username");
+        // console.log(inputbox.attributes);
+
+
+        //getAttribute()
+        // console.log(inputbox.getAttribute("placeholder"));
+
+
+        //setAttribute()
+        // inputbox.setAttribute("class", "user");
+        // console.log(inputbox);
+
+
+        //hasAttribute(): to check availabilty of particular element
+       console.log(inputbox.hasAttribute("class"));//because class attributes is not there
+
+       //removeAttributes() :remove placeholder from the element
+       console.log(inputbox.removeAttribute("placeholder"));
+       
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

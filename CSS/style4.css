@@ -1,0 +1,16 @@
+.myclass{
+    color:blueviolet;
+
+}
+
+#myid1{
+    color: antiquewhite;
+}
+
+#myid2{
+    color: rgb(235, 173, 91);
+}
+
+body{
+    background-color: cadetblue;
+}

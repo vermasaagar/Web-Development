@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: azure;
+}
+
+#navbar{
+    height: 60px;
+    background-color: black;
+}
+
+button{
+    background-color: rgb(234, 99, 50);
+}
+
+#logo{
+    background-color: rgb(239, 99, 48);
+}
+
+a{
+    margin-right:600px ;
+    text-decoration: none;
+}

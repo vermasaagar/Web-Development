@@ -1,0 +1,67 @@
+
+h2{
+    color: burlywood;
+}
+
+body{
+
+    background-image: url("image1.jpg");
+    background-size: cover;
+}
+
+#div1{
+    position:relative;
+    top:0px;
+
+    height:300px;
+    width:300px;
+    background-color: aqua;
+    border: 2px solid black;
+    display: inline-block;
+
+    background-image: url("image2.jpg");
+    background-size: cover;
+}
+
+#div2{
+    position:relative;
+    top:0px;
+
+    height:300px;
+    width:300px;
+    background-color: aqua;
+    border: 2px solid black;
+    display: inline-block;
+
+    background-image: url("image3.jpg");
+    background-size: cover;
+}
+
+#div3{
+    position:relative;
+    top:0px;
+
+    height:300px;
+    width:300px;
+
+    background-color: aqua;
+    border: 2px solid black;
+    display: inline-block;
+
+    background-image: url("image4.jpg");
+    background-size: cover;
+}
+
+#div4{
+    position:relative;
+    top:0px;
+
+    height:300px;
+    width:300px;
+    background-color: aqua;
+    border: 2px solid black;
+    display: inline-block;
+
+    background-image: url("image5.jpg");
+    background-size: cover;
+}

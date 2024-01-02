@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> click the button to display date</p>
+    <button onclick="myFunction()">try it</button>
+    <p id="time"></p>
+    <p id="demo"></p>
+    
+
+<script>
+    // function myFunction() {
+    //     var t = new Date();
+    //     t.setHours(5);
+    //     document.getElementById("demo").innerHTML = t;
+    // }
+
+
+    // (function(){
+    // setInterval(()=> {
+    //     var d = new Date().toLocalTimeString(); 
+    //     document.getElementById("demo").innerHTML = d;
+    // }, 1000)
+    // })();
+
+
+
+
+    var t = new Date().toLocalTimeString();
+    document.getElementById("time").innerHTML = t;
+
+    var d = new Date().toLocalDateString();
+    document.getElementById("demo").innerHTML = d;
+</script>
+
+
+</body>
+</html>

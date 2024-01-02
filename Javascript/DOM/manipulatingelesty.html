@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating element stlye</title>
+</head>
+<style>
+   input {
+    font-size: 12px;
+    background-color: blanchedalmond;
+    width: 300px;
+    
+
+    }
+</style>
+<body>
+    <!-- <input type="text" id="username" placeholder="username" style="background-color: blue; font-size: 20px;"> -->
+
+    <input type="text" id="username" placeholder="username">
+
+
+
+
+    <script>
+        let inputbox = document.getElementById("username");
+        //  console.log(inputbox.style.background);
+        // inputbox.style.cssText += "width:200px; height:100px";
+
+
+        console.log(window.getComputedStyle(inputbox).width);
+       
+    </script>
+    
+</body>
+</html>

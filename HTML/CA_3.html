@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel with JavaScript Object</title>
+  <style>
+    /* Carousel styles */
+    .carousel {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    .carousel img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .carousel .slides {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel .slide {
+      width: 100%;
+    }
+    
+    /* JavaScript object styles */
+    .object {
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 20px;
+    }
+    
+    .object ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .object li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide"><img src="./img1.jpeg"></div>
+      <div class="slide"><img src="./img2.jpeg"></div>
+      <div class="slide"><img src="./img3.jpeg"></div>
+      <div class="slide"><img src="./img4.jpeg"></div>
+      <div class="slide"><img src="./img5.jpeg"></div>
+    </div>
+  </div>
+  
+  <div class="object">
+    <h2>JavaScript Object</h2>
+    <ul>
+        <li><strong>Name:</strong> Sagar Verma</li>
+        <li><strong>Age:</strong> 22</li>
+        <li><strong>Skills:</strong> HTML, CSS, JavaScript, React</li>
+      </ul>
+  </div>
+  
+  <script>
+    // JavaScript Object
+    const person = {
+      name: 'Sagar Verma',
+      age: 22,
+      skills: ['HTML', 'CSS', 'JavaScript', 'React']
+    };
+    
+    // Output JavaScript Object to DOM
+    const objectDiv = document.querySelector('.object');
+    const objectUl = objectDiv.querySelector('ul');
+    
+    for (const [key, value] of Object.entries(person)) {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `<strong>${key}:</strong> ${value}`;
+      objectUl.appendChild(listItem);
+    }
+    
+    // Carousel
+    const carousel = document.querySelector('.carousel');
+    const slides = carousel.querySelector('.slides');
+    const slide = carousel.querySelectorAll('.slide');
+    
+    const slideWidth = slide[0].clientWidth;
+    let slideIndex = 0;
+    
+    function moveSlides() {
+      slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    }
+    
+    function prevSlide() {
+      slideIndex--;
+      if (slideIndex < 0) {
+        slideIndex = slide.length - 1;
+      }
+      moveSlides();
+    }
+    
+    function nextSlide() {
+      slideIndex++;
+      if (slideIndex >= slide.length) {
+        slideIndex = 0;
+      }
+      moveSlides();
+    }
+    
+    setInterval(nextSlide, 3000);
+  </script>
+</body

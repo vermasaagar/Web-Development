@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+<!-- event bubbling: events start at the most speacific element and flows towards least specific element -->
+
+
+<!-- event capturing : 
+event start at the least specific element and flows toward the most specific element -->
+
+<!-- 
+Event handler : An event handler is a piece of code that will be executed when the the event occur -->
+
+<!-- 
+this keyword inside the event handler refers to target element -->
+
+
+
+    <div id="contain">
+        <!-- <button id="btn" type="button" onclick="displaymsg();">click here</button> -  -- - -   or --  - -  -->
+
+        <button id="btn">click here</button>
+
+
+    </div>
+
+
+    <script>
+
+        // function displaymsg(){
+        //     // console.log("Button clicked from the fn");
+
+        //     // console.log(this.id);
+
+           
+
+
+        // }
+
+
+        let btn = document.getElementById("btn");
+
+// btn.onclick = function(){
+//     console.log("button clicked");
+// }
+
+
+    //    addEventListener(event,function, usecapture);
+
+    //    btn.addEventListener('click', function(){
+    //     console.log("button Clicked");
+    //    })
+
+
+    function displaymsg(){
+        console.log("Button clicked");
+    }
+
+    btn.addEventListener('click', displaymsg);
+
+
+    // btn.removeEventListener('click', displaymsg);
+
+      
+
+    </script>
+    
+</body>
+</html>

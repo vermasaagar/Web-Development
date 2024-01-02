@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel and JS Object </title>
+    <style>
+      /* carousel styles */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden; 
+      }
+
+      .carousel-slides {
+        display: flex;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .carousel-slide {
+        position: relative;
+        flex: 0 0 100%;
+        max-width: 100%;
+        height: 100%;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .carousel-prev,
+      .carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .carousel-prev {
+        left: 20px;
+      }
+
+      .carousel-next {
+        right: 20px;
+      }
+
+      /* JS object styles */
+      .js-object {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        margin-top: 40px;
+      }
+
+      .js-object button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- carousel -->
+    <div class="carousel-container">
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <img src="https://picsum.photos/id/1018/800/400" alt="Slide 1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://picsum.photos/id/1023/800/400" alt="Slide 2" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://picsum.photos/id/1020/800/400" alt="Slide 3" />
+        </div>
+      </div>
+      <div class="carousel-prev" onclick="prevSlide()">&#10094;</div>
+      <div class="carousel-next" onclick="nextSlide()">&#10095;</div>
+    </div>
+
+    <!-- JS object -->
+    <div class="js-object">
+      <p id="js-output"></p>
+      <button onclick="updateObject()">Update Object</button>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        // carousel JavaScript code
+        const carouselSlides = document.querySelector(".carousel-slides");
+        const carouselSlide = document.querySelectorAll(".carousel-slide");
+        const prevBtn = document.querySelector(".carousel-prev");
+        const nextBtn = document.querySelector(".carousel-next");
+        const slideWidth = carouselSlide[0].clientWidth;
+        let slideCounter = 1;
+      
+        carouselSlides.style.transform = `translateX(-${slideWidth * slideCounter}px)`;
+      
+        // Button listeners
+        nextBtn.addEventListener("click", () => {
+          if (slideCounter >= carouselSlide.length - 1) return;
+          slideCounter++;
+          carouselSlides.style.transform = `translateX(-${slideWidth * slideCounter}px)`;
+        });
+      
+        prevBtn.addEventListener("click", () => {
+          if (slideCounter <= 0) return;
+          slideCounter--;
+          carouselSlides.style.transform = `translateX(-${slideWidth * slideCounter}px)`;
+        });
+      
+        // Loop carousel
+        setInterval(() => {
+          if (slideCounter >= carouselSlide.length - 1) return;
+          slideCounter++;
+          carouselSlides.style.transform = `translateX(-${slideWidth * slideCounter}px)`;
+        }, 5000);
+      
+        // JS object JavaScript code
+        let myObject = {
+          Name: "Sagar Verma",
+          age: 22,
+          Email: "abc@gmail.com",
+        };
+      
+        function updateObject() {
+          myObject.age++;
+          document.querySelector("#js-output").innerHTML = `Updated object: ${JSON.stringify(myObject)}`;
+        }
+      </script>
+      

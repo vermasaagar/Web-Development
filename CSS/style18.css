@@ -1,0 +1,18 @@
+.loader{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 20px solid rgb(184, 184, 222);
+    border-top: 20px solid black;
+    animation: spinAnimate 1s ease-in 0s infinite; 
+}
+
+@keyframes spinAnimate{
+    from{
+        tranform:rotate(0deg)
+    }
+    to{
+
+        transform: rotate(360deg);
+    }
+}

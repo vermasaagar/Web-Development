@@ -1,0 +1,11 @@
+div{
+    background-color: pink;
+    /* cover area based on text */
+    display: inline;
+}
+
+button{
+    /* cover all width */
+    display: block;
+
+}

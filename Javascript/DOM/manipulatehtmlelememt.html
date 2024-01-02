@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate Html element</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+        <li>Blog</li>
+    </ul>
+
+
+    
+    <script>
+        let div = document.createElement("div");
+        div.innerHTML = "<p>Welcome</p>"
+
+        document.body.appendChild(div);
+
+        div.id = "title";
+        // console.log(div);
+
+        let menu = document.getElementById("menu");
+        let list = document.createElement("li");
+        list.innerHTML = "Project";
+        menu.appendChild(list);
+
+
+
+
+
+    </script>
+</body>
+</html>
